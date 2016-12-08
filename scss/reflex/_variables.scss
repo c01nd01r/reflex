@@ -17,11 +17,13 @@ $reflex-max-width: 100% !default; // max-width of grid
 
 // Breakpoints
 // -------------------------
-$reflex-xs: 480px !default;
-$reflex-sm: 768px !default;
-$reflex-md: 992px !default;
-$reflex-lg: 1200px !default;
-$reflex-xlg: 1600px !default;
+$reflex-bp: (
+    xs: 480px,
+    sm: 768px,
+    md: 992px,
+    lg: 1200px,
+    xlg: 1600px,
+) !default;
 
 // Spacing
 // -------------------------

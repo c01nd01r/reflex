@@ -23,10 +23,8 @@
 }
 
 @mixin loop-reflex-columns($index, $class, $type) {
-    @if $index >= 0 {
-        @include calc-reflex-columns($index, $class, $type);
-        // next iteration
-        @include loop-reflex-columns(($index - 1), $class, $type);
+    @for $i from $index through 1 {
+        @include calc-reflex-columns($i, $class, $type);
     }
 }
 
@@ -105,12 +103,10 @@
 }
 
 @mixin loop-grid--order-helpers($index, $breakpoint: null) {
-    @if $index >= 0 {
-        .#{$reflex-prefix}grid--order-#{$index}#{$breakpoint} {
-            @include order($index);
+    @for $i from $index through 0 {
+        .#{$reflex-prefix}grid--order-#{$i}-#{$breakpoint} {
+            @include order($i);
         }
-        // next iteration
-        @include loop-grid--order-helpers(($index - 1), $breakpoint);
     }
 }
 
