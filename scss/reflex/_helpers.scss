@@ -212,17 +212,11 @@
 // grid__cell modifiers
 // --------------------------------------------------
 
-.#{$reflex-prefix}grid__cell--padding-sm {
-    padding: $reflex-cell-spacing-sm;
-}
-
-.#{$reflex-prefix}grid__cell--padding-md {
-    padding: $reflex-cell-spacing-md;
-}
-
-.#{$reflex-prefix}grid__cell--padding-lg {
-    padding: $reflex-cell-spacing-lg;
-}
+@each $prop, $value in $reflex-cell-spacing-bp {
+    .#{$reflex-prefix}grid__cell--padding-#{$prop} {
+        padding: $value;
+    }
+};
 
 .#{$reflex-prefix}grid__cell-img {
     display: block;
